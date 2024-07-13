@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>| Welcome to Chat Application |</title>
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+</head>
+
+<body>
+    <div class="container my-2">
+        <h1>Welcome to Chat Application</h1>
+        <div class="border p-5 d-flex flex-wrap gap-2 justify-content-center">
+            {% for group in groups %}
+                <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{group.name}}</h5>
+                        <a href="/{{group.name}}/" class="btn btn-primary">Join</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
